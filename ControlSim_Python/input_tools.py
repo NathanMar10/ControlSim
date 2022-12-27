@@ -16,18 +16,19 @@ import pygame
 from pygame import gfxdraw
 
 def read_frame(line, root):
-    regex = "\((\d+\.\d+), (\d+\.\d+)\), \((\d+\.\d+), (\d+\.\d+)\), \((\d+\.\d+), (\d+\.\d+)\)"
+    regex = "\((\d+\.\d+), (\d+\.\d+)\)"
     out = re.search(regex, line)
     doubles = []
     for entry in out.groups():
         doubles.append(int(float(entry)))
 
-    gfxdraw.line(root, doubles[0], doubles[1], doubles[2], doubles[3], (255, 255, 255))
-    gfxdraw.line(root, doubles[2], doubles[3], doubles[4], doubles[5], (255, 255, 255))
+    gfxdraw.line(root, 400, 400, doubles[0], doubles[1], (255, 255, 255))
+    #gfxdraw.line(root, doubles[2], doubles[3], doubles[4], doubles[5], (255, 255, 255))
 
     gfxdraw.aacircle(root, doubles[0], doubles[1], 15, (255, 0, 0))
     gfxdraw.filled_circle(root, doubles[0], doubles[1], 15, (255, 0, 0))
-    gfxdraw.aacircle(root, doubles[2], doubles[3], 15, (0, 255, 0))
-    gfxdraw.filled_circle(root, doubles[2], doubles[3], 15, (0, 255, 0))
-    gfxdraw.aacircle(root, doubles[4], doubles[5], 15, (0, 0, 255))
-    gfxdraw.filled_circle(root, doubles[4], doubles[5], 15, (0, 0, 255)) 
+    gfxdraw.aacircle(root, 400, 400, 15, (0, 255, 0))
+    gfxdraw.filled_circle(root, 400, 400, 15, (0, 255, 0))
+    
+    #gfxdraw.aacircle(root, doubles[4], doubles[5], 15, (0, 0, 255))
+    #gfxdraw.filled_circle(root, doubles[4], doubles[5], 15, (0, 0, 255)) 

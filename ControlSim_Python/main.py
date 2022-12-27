@@ -25,14 +25,16 @@ def main():
         inFile = open("Outputs/output.txt", 'r', 1)
         for line in inFile:
             root.fill((0, 0, 0))
-            clock.tick(10)
+            clock.tick(60)
             input_tools.read_frame(line, root)
             pygame.display.update()
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    exit = True
+                    raise Exception("All done")
         inFile.close()
         
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                exit = True
+
  
 
 
