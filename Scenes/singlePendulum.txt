@@ -1,0 +1,8 @@
+**Properties**
+Size: (800, 800);
+Gravity: 10;
+**Objects**
+ID: 1, Pos: (400, 400), Size: 25, Fixed: True;
+ID: 2, Pos: (300, 400), Size: 25;
+**Fixed Links**
+Links: (1, 2), Length: 100;
